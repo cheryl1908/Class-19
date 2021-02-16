@@ -68,6 +68,8 @@ function setup() {
 
 function draw() {
   background(180);
+  camera.x=trex.x;
+  camera.y=trex.y;
   
    ground.velocityX = -(6+3*score/100);
   
