@@ -1,3 +1,4 @@
+
 var trex, trex_running, trex_collided;
 var ground, invisibleGround, groundImage;
 
@@ -17,7 +18,7 @@ var jumpS,checkpointS,dieS;
 function preload(){
   trex_running = loadAnimation("trex1.png","trex3.png","trex4.png");
   trex_collided = loadImage("trex_collided.png");
-  
+
   groundImage = loadImage("ground2.png");
   
   cloudImage = loadImage("cloud.png");
@@ -38,7 +39,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 200);
+  createCanvas(900, 300);
   
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
@@ -65,18 +66,16 @@ function setup() {
   gameOver.addImage("over",gameOverI);
   gameOver.scale=0.5;
 }
-
 function draw() {
   background(180);
   camera.x=trex.x;
-  camera.y=trex.y;
   
    ground.velocityX = -(6+3*score/100);
   
    if(gameState === PLAY){
   score = score + Math.round(getFrameRate()/60);
-  text("Score: "+ score, 500,50);
-     
+  text("Score: "+ score, 100,50);
+
       if (score>0 && score%100 === 0){
       checkpointS.play();
     }  
